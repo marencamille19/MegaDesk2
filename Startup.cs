@@ -1,13 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using MegaDesk2.Data;
 
 namespace MegaDesk2
 {
@@ -24,6 +22,9 @@ namespace MegaDesk2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddDbContext<MegaDesk2Context>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("MegaDesk2Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
