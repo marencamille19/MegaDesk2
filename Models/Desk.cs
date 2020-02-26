@@ -18,8 +18,11 @@ namespace MegaDesk2.Models
         }
 
         public int ID {get; set;}
+        [Display(Name = "Customer Name")]
+        public string CustomerName { get; set; }
         public int Width { get; set; }
         public int Depth { get; set; }
+        [Display(Name = "Number of Drawers")]
         public int NumDrawers { get; set; }
         public string Shipping { get; set; }
         public DesktopMaterial Material { get; set; }
