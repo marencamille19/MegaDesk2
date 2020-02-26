@@ -28,6 +28,9 @@ namespace MegaDesk2.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("nvarchar(max)");
+                    
                     b.Property<int>("Depth")
                         .HasColumnType("int");
 
@@ -44,6 +47,9 @@ namespace MegaDesk2.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Width")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Total")
                         .HasColumnType("int");
 
                     b.HasKey("ID");

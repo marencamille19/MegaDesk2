@@ -13,12 +13,14 @@ namespace MegaDesk2.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CustomerName = table.Column<string>(nullable:false),
                     Width = table.Column<int>(nullable: false),
                     Depth = table.Column<int>(nullable: false),
                     NumDrawers = table.Column<int>(nullable: false),
                     Shipping = table.Column<string>(nullable: true),
                     Material = table.Column<int>(nullable: false),
-                    QuoteDate = table.Column<DateTime>(nullable: false)
+                    QuoteDate = table.Column<DateTime>(nullable: false),
+                    Total = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
